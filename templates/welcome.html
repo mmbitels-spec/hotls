@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bienvenue —Microsoft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="logo">
+        <div class="logo-grid"><span></span><span></span><span></span><span></span></div>
+        <span class="logo-text">Microsoft</span>
+      </div>
+
+      <div class="user-row">
+        <div class="avatar">{{ user[0]|upper }}</div>
+        <div class="user-info">
+          <p>{{ user }}</p>
+          <small>Connecté à Microsoft</small>
+        </div>
+      </div>
+
+      <h1>Bienvenue</h1>
+      <p style="margin-top:8px; font-size:14px; color:#444; line-height:20px;">
+        Vous êtes maintenant connecté au portail interne Microsoft.
+      </p>
+
+      <div class="notice">🔒 Votre session est sécurisée par l'authentification Microsoft.</div>
+
+      <div class="actions">
+        <a href="{{ url_for('logout') }}" class="btn-secondary"
+           style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none;">
+          Se déconnecter
+        </a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="#">Conditions d'utilisation</a>
+      <a href="#">Confidentialité et cookies</a>
+    </div>
+  </div>
+</body>
+</html>

